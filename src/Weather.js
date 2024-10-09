@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import { WeatherSvg } from "weather-icons-animated";
 
 import Forecast from "./Forecast";
 
@@ -13,7 +14,7 @@ export default function Weather(props) {
     setForecast({
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
-      icon: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
       city: response.data.city,
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,

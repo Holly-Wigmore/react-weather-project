@@ -22,7 +22,7 @@
   line-height: 20px;
   list-style: none;
 }
-.weather img {
+.weather svg {
   height: 64px;
   width: 64px;
   margin-right: 10px;
