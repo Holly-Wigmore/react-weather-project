@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import { WeatherSvg } from "weather-icons-animated";
 
 import Forecast from "./Forecast";
 

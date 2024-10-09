@@ -19,8 +19,8 @@ export default function WeatherIcon(props) {
     "thunderstorm-night": "lightning-rainy",
     "snow-day": "snowy",
     "snow-night": "snowy",
-    "mist-day": "fog",
-    "mist-night": "fog",
+    "mist-day": "cloudy",
+    "mist-night": "cloudy",
   };
   return <WeatherSvg state={codeMapping[props.code]} width={64} height={64} />;
 }
