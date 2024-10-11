@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import DailyWeather from "./DailyWeatherDay.js";
+import DailyWeather from "./DailyWeather.js";
 import Forecast from "./Forecast";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
-  const [ready, setReady] = useState(false);
-  const [forecast, setForecast] = useState({});
+  const [forecast, setForecast] = useState({ ready: false });
   function getResponse(response) {
-    setReady(true);
     setForecast({
+      ready: true,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       icon: response.data.condition.icon,
@@ -18,7 +17,6 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
       date: new Date(response.data.time * 1000),
-      coordinates: response.data.coordinates,
     });
   }
 
@@ -35,12 +33,12 @@ export default function Weather(props) {
   function handleCitySearch(event) {
     setCity(event.target.value);
   }
-  if (ready) {
+  if (forecast.ready) {
     return (
-      <div className="weather">
+      <div className="weather shadow-lg">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-8">
               <input
                 type="search"
                 placeholder="Enter a City"
@@ -49,17 +47,13 @@ export default function Weather(props) {
                 onChange={handleCitySearch}
               />
             </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn btn-primary w-100"
-              />
+            <div className="col-4">
+              <input type="submit" value="Search" className="btn w-100" />
             </div>
           </div>
         </form>
         <Forecast data={forecast} />
-        <DailyWeather coordinates={forecast.coordinates} />
+        <DailyWeather city={forecast.city} />
       </div>
     );
   } else {

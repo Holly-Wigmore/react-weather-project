@@ -1,5 +1,6 @@
 .DailyWeather {
   text-align: center;
+  margin-top: 10px;
 }
 .DailyWeather-Min {
   opacity: 0.6;

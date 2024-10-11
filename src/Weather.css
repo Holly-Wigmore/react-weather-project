@@ -1,9 +1,10 @@
 .weather {
-  border: 1px solid grey;
+  border: 1px solid white;
   border-radius: 4px;
   font-family: arial, sans-serif;
-  color: rgb(135, 135, 135);
-  padding: 16px;
+  color: #328289;
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .weather h1 {
@@ -15,6 +16,10 @@
 .weather ul {
   margin: 0;
   padding: 0;
+}
+.weather .humidity-wind {
+  text-align: right;
+  padding-right: 60px;
 }
 .weather li {
   font-size: 16px;
@@ -30,7 +35,7 @@
 }
 .weather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: #328289;
   font-size: 64px;
   font-weight: 400;
   line-height: 64px;
@@ -38,9 +43,18 @@
 }
 .weather .unit {
   font-size: 16px;
-  color: rgb(33, 33, 33);
+  color: #328289;
   font-weight: 400;
   position: relative;
   top: -34px;
   line-height: 1;
+}
+.weather .btn {
+  color: white;
+  background: #328289;
+  transition: all 150ms ease-in-out;
+}
+.weather .btn:hover {
+  background: white;
+  color: #328289;
 }

@@ -5,7 +5,7 @@ import WeatherTemperature from "./WeatherTemperature";
 
 export default function Forecast(props) {
   return (
-    <div>
+    <div className="Forecast">
       <h1>{props.data.city}</h1>
       <ul>
         <li>
@@ -15,7 +15,7 @@ export default function Forecast(props) {
       </ul>
       <div className="row mt-3">
         <div className="col-6">
-          <div className="clearfix">
+          <div className="d-flex">
             <div className="float-left">
               <WeatherIcon code={props.data.icon} />
             </div>
@@ -25,7 +25,7 @@ export default function Forecast(props) {
           </div>
         </div>
         <div className="col-6">
-          <ul>
+          <ul className="humidity-wind">
             <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {props.data.wind}km/h</li>
           </ul>
